@@ -93,6 +93,22 @@
     .footer-links a:hover { color: var(--white); }
     .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.75rem; width: 100%; margin-top: 8px; }
 
+
+    /* HAMBURGER */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 20px; height: 2px; background: var(--white); margin: 4px 0; transition: all 0.3s; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; padding: 80px 32px 40px; flex-direction: column; gap: 0; }
+    .mobile-overlay.open { display: flex; }
+    .mobile-overlay a { color: var(--white); font-size: 1.2rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-overlay a:last-child { border-bottom: none; }
+    .mobile-overlay .close-btn { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-logo img { height: 24px; }
+      .nav-logo span { font-size: 0.75rem; }
+    }
+
     @media (max-width: 900px) {
       .nav-inner { padding: 0 24px; } .nav-links { gap: 20px; }
       .page-hero { padding: 60px 0; } .page-hero-inner { padding: 0 24px; }
@@ -109,7 +125,7 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 600px) {
-      .nav-links .hide-mobile { display: none; }
+
     }
   </style>
 </head>
@@ -122,14 +138,25 @@
       <span>Komorebi Holdings</span>
     </a>
     <div class="nav-links">
-      <a href="strategy.html" class="hide-mobile">Strategy</a>
-      <a href="advising.html" class="hide-mobile">Advising</a>
+      <a href="strategy.html">Strategy</a>
+      <a href="advising.html">Advising</a>
       <a href="about.html" class="active">About</a>
-      <a href="https://leekelsall.com" target="_blank" rel="noopener" class="hide-mobile">Writing</a>
-      <a href="mailto:lee@komorebiholdings.com" class="cta">Contact</a>
+      <a href="https://leekelsall.com" target="_blank" rel="noopener">Writing</a>
+      <a href="about.html#contact" class="cta">Contact</a>
     </div>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <div class="mobile-overlay" id="mobileMenu">
+    <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
+    <a href="strategy.html" onclick="this.parentElement.classList.remove('open')">Strategy</a>
+    <a href="advising.html" onclick="this.parentElement.classList.remove('open')">Advising</a>
+    <a href="about.html" onclick="this.parentElement.classList.remove('open')">About</a>
+    <a href="https://leekelsall.com" target="_blank" rel="noopener" onclick="this.parentElement.classList.remove('open')">Writing</a>
+    <a href="about.html#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  </div>
 
   <section class="page-hero">
     <div class="page-hero-inner">
@@ -250,6 +277,15 @@
     </div>
   </section>
 
+  <section class="section bg-navy" id="contact" style="text-align: center;">
+    <div class="section-inner">
+      <div class="section-label" style="color: var(--gold);">Contact</div>
+      <h2 style="font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 16px;">Get in touch</h2>
+      <p style="font-size: 0.95rem; color: rgba(255,255,255,0.65); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto;">Whether you're a founder, fund manager, or operator — we'd like to hear from you.</p>
+      <a href="mailto:lee@komorebiholdings.com" class="btn" style="background: var(--teal); color: var(--white); font-weight: 600;">lee@komorebiholdings.com</a>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
@@ -261,9 +297,9 @@
         <a href="advising.html">Advising</a>
         <a href="about.html">About</a>
         <a href="https://leekelsall.com" target="_blank" rel="noopener">Writing</a>
-        <a href="mailto:lee@komorebiholdings.com">Contact</a>
+        <a href="about.html#contact">Contact</a>
       </div>
-      <div class="footer-copy">© 2026 Komorebi Investments Pty Ltd, trading as Komorebi Holdings &nbsp;·&nbsp; lee@komorebiholdings.com</div>
+      <div class="footer-copy">© 2026 Komorebi Investments Pty Ltd, trading as Komorebi Holdings</div>
     </div>
   </footer>
 
