@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategy — Komorebi Holdings</title>
+  <meta name="description" content="Travel and transport is a $10.9 trillion complex adaptive system. Our strategy spans hospitality, travel platforms, e-mobility, and transport infrastructure." />
+  <link rel="icon" href="images/komorebi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A0F1E; --navy-mid: #111828; --teal: #00b090; --teal-dark: #008361;
+      --purple: #5025d1; --orange: #fea419; --dark: #141720; --gold: #C9A84C;
+      --grey: #f4f3f0; --mid-grey: #6B6E7B; --white: #ffffff; --max: 1140px;
+    }
+    html { font-size: 16px; }
+    body { background: var(--white); color: var(--dark); font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo span { color: var(--white); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; opacity: 0.85; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.75); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); font-weight: 600; }
+    .nav-links a.cta { background: var(--teal); color: var(--white); padding: 8px 18px; border-radius: 4px; font-weight: 500; }
+    .nav-links a.cta:hover { background: var(--teal-dark); }
+
+    .page-hero { background: var(--navy); padding: 80px 0; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: url('images/green-data.jpg') center/cover no-repeat; opacity: 0.1; }
+    .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
+    .page-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--white); line-height: 1.2; letter-spacing: -0.03em; max-width: 680px; margin-bottom: 20px; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 540px; line-height: 1.7; font-weight: 300; }
+
+    .section { padding: 80px 0; }
+    .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title {font-family: "Syne", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .section-body { font-size: 0.97rem; color: var(--mid-grey); line-height: 1.8; max-width: 720px; }
+    .section-body p { margin-bottom: 16px; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .bg-grey { background: var(--grey); }
+    .bg-navy { background: var(--navy); }
+
+    /* STATS */
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--grey); border: 1px solid var(--grey); margin-top: 48px; }
+    .stat { background: var(--white); padding: 32px 28px; }
+    .stat-num { font-family: "Syne", sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+    .stat-num span { color: var(--teal); }
+    .stat-label { font-size: 0.8rem; color: var(--mid-grey); font-weight: 400; }
+
+    /* TAILWINDS */
+    .tailwinds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .tailwind { background: var(--white); padding: 32px 28px; border-radius: 4px; border-left: 4px solid var(--teal); }
+    .tailwind h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .tailwind p { font-size: 0.88rem; color: var(--mid-grey); line-height: 1.65; }
+
+    /* PILLARS */
+    .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    .pillar { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 36px 32px; }
+    .pillar-num { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .pillar h3 {font-family: "Syne", sans-serif;  font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .pillar p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .pillar ul { list-style: none; margin-top: 12px; }
+    .pillar ul li { font-size: 0.85rem; color: rgba(255,255,255,0.55); padding: 4px 0; padding-left: 14px; position: relative; }
+    .pillar ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); font-size: 0.75rem; }
+
+    /* WHY KOMOREBI */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 0; }
+    .why-text h2 {font-family: "Syne", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.01em; }
+    .why-text p { font-size: 0.95rem; color: var(--mid-grey); line-height: 1.8; margin-bottom: 16px; }
+    .why-credentials { display: flex; flex-direction: column; gap: 16px; }
+    .credential { padding: 20px 24px; border-left: 3px solid var(--teal); background: var(--grey); }
+    .credential h4 { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .credential p { font-size: 0.82rem; color: var(--mid-grey); line-height: 1.6; margin: 0; }
+
+    footer { background: var(--navy); padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo img { height: 28px; opacity: 0.8; }
+    .footer-logo span { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.03em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.75rem; width: 100%; margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px; } .nav-links { gap: 20px; }
+      .page-hero { padding: 60px 0; } .page-hero-inner { padding: 0 24px; }
+      .section { padding: 60px 0; } .section-inner { padding: 0 24px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .tailwinds-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 40px 0; } .footer-inner { padding: 0 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/komorebi-logo.png" alt="Komorebi" />
+      <span>Komorebi Holdings</span>
+    </a>
+    <div class="nav-links">
+      <a href="strategy.html" class="active">Strategy</a>
+      <a href="advising.html" class="hide-mobile">Advising</a>
+      <a href="about.html" class="hide-mobile">About</a>
+      <a href="https://leekelsall.com" target="_blank" rel="noopener" class="hide-mobile">Writing</a>
+      <a href="mailto:lee@komorebiholdings.com" class="cta">Contact</a>
+    </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-label">Our Strategy</div>
+      <h1>Travel & Transport is the ultimate complex adaptive system.</h1>
+      <p>A $10.9 trillion market, close to 10% of global GDP, employing one in ten people worldwide — and on the edge of reinvention.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">The System</div>
+      <div class="section-title">More than the sum of its parts</div>
+      <div class="section-body">
+        <p>Travel and transport spans hospitality, distribution platforms, mobility providers, and the infrastructure that supports them. Hotels, resorts, lodges, and rentals are tied together by the digital systems that connect supply with demand. The sector works as a complex system rather than a set of silos.</p>
+        <p>Changing demographics, wealth creation, technology, and regulation all act as feedback loops that shape how people and goods move. Underneath it lies a constant driver: the human desire to connect, trade, and explore.</p>
+        <p>Mobility covers the modes of transport — aviation, shipping, rail, and roads — now being reshaped by electrification, autonomy, and emerging air mobility. Infrastructure anchors the system with airports, ports, rail lines, toll roads, and logistics hubs. Taken together, this network forms the circulatory system of the global economy: capital intensive, politically sensitive, indispensable, and on the edge of reinvention.</p>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">$10.9<span>tr</span></div>
+          <div class="stat-label">Global travel & transport market</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">~10<span>%</span></div>
+          <div class="stat-label">Share of global GDP</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">1 in <span>10</span></div>
+          <div class="stat-label">People employed worldwide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-grey">
+    <div class="section-inner">
+      <div class="section-label">Secular Tailwinds</div>
+      <div class="section-title">Permanent drivers of investment demand</div>
+      <div class="section-body">
+        <p>Travel & Transport is being reshaped by deep structural forces that transcend cycles. These are not passing trends but permanent drivers of investment demand.</p>
+      </div>
+      <div class="tailwinds-grid">
+        <div class="tailwind">
+          <h3>Rising Global Middle Class</h3>
+          <p>Unlocking new flows of business and leisure travel across emerging and developed markets, with the greatest growth concentrated in Asia, Africa, and Latin America.</p>
+        </div>
+        <div class="tailwind">
+          <h3>Digitisation</h3>
+          <p>Booking platforms, distribution systems, artificial intelligence, and smart infrastructure are rewiring how travel is experienced and how transport is managed at every level.</p>
+        </div>
+        <div class="tailwind">
+          <h3>Global E-Commerce</h3>
+          <p>Driving sustained capital needs in ports, private airports, logistics corridors, and rail networks as the physical backbone of digital commerce.</p>
+        </div>
+        <div class="tailwind">
+          <h3>Electrification</h3>
+          <p>Creating new forms of mobility — eVTOLs, hybrid marine, EV fleets — and reshaping the infrastructure backbone of the future of transport and energy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-navy">
+    <div class="section-inner">
+      <div class="section-label" style="color: var(--teal);">Four Pillars</div>
+      <div class="section-title" style="color: var(--white);">Our focus spans four interconnected areas</div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-num">01 — Hospitality</div>
+          <h3>Where experiential demand meets brand and yield</h3>
+          <p>Hotels, resorts, lodges, ski chalets, theme parks, and listed hospitality REITs.</p>
+          <ul>
+            <li>Luxury & lifestyle hotels</li>
+            <li>Safari lodges & eco-resorts</li>
+            <li>Extended stay & aparthotels</li>
+            <li>Hospitality REITs</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02 — Travel Platforms</div>
+          <h3>The digital backbone of global travel</h3>
+          <p>From traditional tour operators and global OTAs to distribution systems and vertical SaaS with scalable, recurring-revenue models.</p>
+          <ul>
+            <li>Online travel agencies</li>
+            <li>Tour operators & DMCs</li>
+            <li>Distribution & GDS</li>
+            <li>Travel vertical SaaS</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03 — E-Mobility</div>
+          <h3>The frontier of human movement</h3>
+          <p>eVTOLs, e-sailing, hybrid marine engines, and the enabling infrastructure that will shape the next era of mobility.</p>
+          <ul>
+            <li>Electric vertical take-off (eVTOL)</li>
+            <li>Marine electrification</li>
+            <li>EV fleet infrastructure</li>
+            <li>Enabling technology platforms</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04 — Transport Infrastructure</div>
+          <h3>The arteries of global flows</h3>
+          <p>Airports, ports, rail, and toll roads — durable, regulated assets that underpin global flows of people and goods.</p>
+          <ul>
+            <li>Airports & air logistics</li>
+            <li>Ports & maritime</li>
+            <li>Rail networks</li>
+            <li>Toll roads & concessions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Why Komorebi</div>
+      <div class="why-grid">
+        <div class="why-text">
+          <h2>A rare investor–operator perspective.</h2>
+          <p>We bring a decade building and scaling hospitality and travel businesses, and a prior decade as a project finance lawyer structuring multi-billion-dollar deals in emerging and frontier markets.</p>
+          <p>This experience informs a rigorous top-down and bottom-up process — allowing us to spot market shifts early, identify resilient business models, and act on mispriced or overlooked opportunities with conviction.</p>
+          <p>We invest in small-cap, publicly listed travel and travel-adjacent companies worldwide and build new ventures from the ground up.</p>
+        </div>
+        <div class="why-credentials">
+          <div class="credential">
+            <h4>Project Finance — Milbank & Norton Rose</h4>
+            <p>Multi-billion-dollar infrastructure, mining, and energy deals across Africa, the Middle East, and Asia. Including the $4.4bn Oyu Tolgoi copper mine in Mongolia.</p>
+          </div>
+          <div class="credential">
+            <h4>Ker & Downey Africa</h4>
+            <p>CEO of the online travel agency division, then leadership across the group. Grew into one of Africa's leading luxury safari operators.</p>
+          </div>
+          <div class="credential">
+            <h4>Fluent Living</h4>
+            <p>Co-founded Cape Town's serviced living platform. Zero to 4 buildings and 500+ keys in under two years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/komorebi-logo.png" alt="Komorebi" />
+        <span>Komorebi Holdings</span>
+      </div>
+      <div class="footer-links">
+        <a href="strategy.html">Strategy</a>
+        <a href="advising.html">Advising</a>
+        <a href="about.html">About</a>
+        <a href="https://leekelsall.com" target="_blank" rel="noopener">Writing</a>
+        <a href="mailto:lee@komorebiholdings.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Komorebi Investments Pty Ltd, trading as Komorebi Holdings &nbsp;·&nbsp; lee@komorebiholdings.com</div>
+    </div>
+  </footer>
+
+</body>
+</html>

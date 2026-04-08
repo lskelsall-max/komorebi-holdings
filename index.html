@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Komorebi Holdings — Research & Advisory</title>
+  <meta name="description" content="Komorebi is the advisory and research practice of Lee Kelsall — strategic advisory and investment research across travel, hospitality, mobility, and infrastructure." />
+  <link rel="icon" href="images/komorebi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A0F1E;
+      --navy-mid: #111828;
+      --teal: #00b090;
+      --teal-dark: #008361;
+      --purple: #5025d1;
+      --orange: #fea419;
+      --dark: #141720; --gold: #C9A84C;
+      --grey: #f4f3f0;
+      --mid-grey: #6B6E7B;
+      --white: #ffffff;
+      --max: 1140px;
+    }
+    html { font-size: 16px; }
+    body { background: var(--white); color: var(--dark); font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo span { color: var(--white); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; opacity: 0.85; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.75); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.cta { background: var(--teal); color: var(--white); padding: 8px 18px; border-radius: 4px; font-weight: 500; }
+    .nav-links a.cta:hover { background: var(--teal-dark); }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 100px 0; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: url('images/circuit-tree.jpg') center/cover no-repeat; opacity: 0.12; }
+    .hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
+    .hero-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+    .hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 720px; margin-bottom: 24px; }
+    .hero h1 span { color: var(--teal); }
+    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 560px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 4px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.02em; transition: all 0.2s; }
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-dark); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.4); color: var(--white); }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* INTRO */
+    .intro { background: var(--white); padding: 80px 0; }
+    .intro-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .intro-text h2 { font-size: 1.75rem; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 20px; letter-spacing: -0.01em; }
+    .intro-text p { font-size: 0.97rem; color: var(--mid-grey); line-height: 1.75; margin-bottom: 16px; }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--grey); border: 1px solid var(--grey); }
+    .stat { background: var(--white); padding: 28px 24px; }
+    .stat-num { font-family: "Syne", sans-serif; font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+    .stat-num span { color: var(--teal); }
+    .stat-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-grey); }
+
+    /* PILLARS */
+    .pillars { background: var(--grey); padding: 80px 0; }
+    .pillars-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title {font-family: "Syne", sans-serif;  font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 48px; letter-spacing: -0.01em; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .pillar { background: var(--white); padding: 32px 24px; border-radius: 4px; border-top: 3px solid transparent; transition: border-color 0.2s; }
+    .pillar:nth-child(1) { border-top-color: var(--teal); }
+    .pillar:nth-child(2) { border-top-color: var(--purple); }
+    .pillar:nth-child(3) { border-top-color: var(--orange); }
+    .pillar:nth-child(4) { border-top-color: var(--navy); }
+    .pillar-icon { font-size: 1.6rem; margin-bottom: 16px; }
+    .pillar h3 {font-family: "Syne", sans-serif;  font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .pillar p { font-size: 0.85rem; color: var(--mid-grey); line-height: 1.65; }
+
+    /* SERVICES */
+    .services { background: var(--navy); padding: 80px 0; }
+    .services-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .services-inner .section-label { color: var(--teal); }
+    .services-inner .section-title { color: var(--white); margin-bottom: 48px; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .service-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 40px 36px; transition: background 0.2s; }
+    .service-card:hover { background: rgba(255,255,255,0.1); }
+    .service-card h3 {font-family: "Syne", sans-serif;  font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .service-card .service-sub { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .service-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 24px; }
+    .service-card a { font-size: 0.82rem; font-weight: 600; color: var(--teal); letter-spacing: 0.03em; }
+    .service-card a:hover { text-decoration: underline; }
+
+    /* WRITING */
+    .writing { background: var(--white); padding: 80px 0; }
+    .writing-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+    .article-card { border-top: 1px solid var(--grey); padding-top: 24px; }
+    .article-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .article-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 10px; }
+    .article-card p { font-size: 0.85rem; color: var(--mid-grey); line-height: 1.65; margin-bottom: 16px; }
+    .article-card a.read-link { font-size: 0.8rem; font-weight: 600; color: var(--purple); letter-spacing: 0.03em; }
+    .article-card a.read-link:hover { text-decoration: underline; }
+
+    /* CONTACT STRIP */
+    .contact-strip { background: var(--teal); padding: 60px 0; text-align: center; }
+    .contact-strip { max-width: var(--max); margin-left: auto; margin-right: auto; padding-left: 40px; padding-right: 40px; }
+    .contact-strip h2 {font-family: "Syne", sans-serif;  font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-strip p { font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .btn-white { background: var(--white); color: var(--teal); font-weight: 700; }
+    .btn-white:hover { background: var(--grey); }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo img { height: 28px; opacity: 0.8; }
+    .footer-logo span { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.03em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.75rem; width: 100%; margin-top: 8px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 72px 0; } .hero-inner { padding: 0 24px; }
+      .intro { padding: 60px 0; } .intro-inner { padding: 0 24px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pillars { padding: 60px 0; } .pillars-inner { padding: 0 24px; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .services { padding: 60px 0; } .services-inner { padding: 0 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .writing { padding: 60px 0; } .writing-inner { padding: 0 24px; }
+      .writing-grid { grid-template-columns: 1fr; gap: 32px; }
+      footer { padding: 40px 0; } .footer-inner { padding: 0 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+      .hero h1 {font-family: "Syne", sans-serif;  font-size: 1.9rem; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .intro-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/komorebi-logo.png" alt="Komorebi" />
+      <span>Komorebi Holdings</span>
+    </a>
+    <div class="nav-links">
+      <a href="strategy.html" class="hide-mobile">Strategy</a>
+      <a href="advising.html" class="hide-mobile">Advising</a>
+      <a href="about.html" class="hide-mobile">About</a>
+      <a href="https://leekelsall.com" target="_blank" rel="noopener" class="hide-mobile">Writing</a>
+      <a href="mailto:lee@komorebiholdings.com" class="cta">Contact</a>
+    </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Research · Advisory · Ventures</div>
+      <h1>Travel, Mobility &<br><span>Infrastructure</span></h1>
+      <p>Strategic advisory and investment research across the $10.9 trillion travel and transport ecosystem — from safari lodges to eVTOLs, OTAs to toll roads.</p>
+      <div class="hero-btns">
+        <a href="strategy.html" class="btn btn-teal">Our Strategy</a>
+        <a href="advising.html" class="btn btn-outline">Work With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="intro-text">
+        <h2>An investor–operator perspective on global travel.</h2>
+        <p>Komorebi is the advisory and research practice of Lee Kelsall — combining two decades of experience building hospitality and travel businesses with a prior decade structuring multi-billion-dollar infrastructure deals across emerging markets.</p>
+        <p>We look for businesses with a <em>Komorebi effect</em> — those that create value beyond the transaction, compound in ways traditional metrics can't fully measure, and endure across cycles.</p>
+      </div>
+      <div class="intro-stats">
+        <div class="stat">
+          <div class="stat-num">$10.9<span>tr</span></div>
+          <div class="stat-label">Global travel market</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">~10<span>%</span></div>
+          <div class="stat-label">Share of global GDP</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">1 in<span> 10</span></div>
+          <div class="stat-label">Jobs worldwide</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Investment pillars</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillars-inner">
+      <div class="section-label">Focus Areas</div>
+      <div class="section-title">Four interconnected pillars</div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-icon">🏨</div>
+          <h3>Hospitality</h3>
+          <p>Hotels, resorts, lodges, ski chalets, theme parks, and listed hospitality REITs — where experiential demand meets brand and yield.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌐</div>
+          <h3>Travel Platforms</h3>
+          <p>OTAs, tour operators, distribution systems, and vertical SaaS — scalable, recurring-revenue models built on digital infrastructure.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <h3>E-Mobility</h3>
+          <p>eVTOLs, e-sailing, hybrid marine engines, and the enabling infrastructure shaping the next era of human movement.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🏗️</div>
+          <h3>Transport Infrastructure</h3>
+          <p>Airports, ports, rail, and toll roads — durable, regulated assets that underpin global flows of people and goods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <div class="section-label">What We Do</div>
+      <div class="section-title">Research, advisory, and ventures</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-sub">Investment Research</div>
+          <h3>Travel Capital</h3>
+          <p>Investment memos and company research on publicly listed businesses tied to travel, mobility, energy infrastructure, and the financial rails of emerging economies. Deep dives into overlooked companies at the edge of the sector.</p>
+          <a href="https://leekelsall.com" target="_blank" rel="noopener">Explore writing →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-sub">Strategic Advisory</div>
+          <h3>Komorebi Advisory</h3>
+          <p>We partner with founders, investors, and operators across travel, mobility, and infrastructure — helping solve complex growth challenges and align strategy, capital, and execution for enduring impact.</p>
+          <a href="advising.html">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="writing">
+    <div class="writing-inner">
+      <div class="section-label">Latest Writing</div>
+      <div class="section-title">From leekelsall.com</div>
+      <div class="writing-grid">
+        <div class="article-card">
+          <div class="article-tag">Investment Thesis</div>
+          <h3>Marine Electrification: The Fountaine Pajot Thesis</h3>
+          <p>A vertical integration play at the intersection of marine electrification, premium leisure, and defensible craft manufacturing.</p>
+          <a href="https://leekelsall.com/fountaine-pajot" target="_blank" rel="noopener" class="read-link">Read on leekelsall.com →</a>
+        </div>
+        <div class="article-card">
+          <div class="article-tag">Case Study</div>
+          <h3>The Chinese Retail-Hotel Ecosystem: Atour Lifestyle</h3>
+          <p>How Atour turned its hotels into showrooms, its staff into brand ambassadors, and its balance sheet into a retail flywheel.</p>
+          <a href="https://leekelsall.com/atour" target="_blank" rel="noopener" class="read-link">Read on leekelsall.com →</a>
+        </div>
+        <div class="article-card">
+          <div class="article-tag">Investment Thesis</div>
+          <h3>Asset-Light Hospitality: The Meliá Hotels Thesis</h3>
+          <p>Spain's largest hotel group is quietly giving away its real estate. The asset-light pivot is either the smartest capital allocation in European hospitality — or a bet the market hasn't priced correctly yet.</p>
+          <a href="https://leekelsall.com/melia" target="_blank" rel="noopener" class="read-link">Read on leekelsall.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-strip">
+    <h2>Let's talk travel.</h2>
+    <p>Whether you're a founder, fund manager, or operator — we'd like to hear from you.</p>
+    <a href="mailto:lee@komorebiholdings.com" class="btn btn-white">lee@komorebiholdings.com</a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/komorebi-logo.png" alt="Komorebi" />
+        <span>Komorebi Holdings</span>
+      </div>
+      <div class="footer-links">
+        <a href="strategy.html">Strategy</a>
+        <a href="advising.html">Advising</a>
+        <a href="about.html">About</a>
+        <a href="https://leekelsall.com" target="_blank" rel="noopener">Writing</a>
+        <a href="mailto:lee@komorebiholdings.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Komorebi Investments Pty Ltd, trading as Komorebi Holdings &nbsp;·&nbsp; lee@komorebiholdings.com</div>
+    </div>
+  </footer>
+
+</body>
+</html>

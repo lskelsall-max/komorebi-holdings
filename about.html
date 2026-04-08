@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Komorebi Holdings</title>
+  <meta name="description" content="Komorebi is the advisory and research practice of Lee Kelsall — combining two decades building travel businesses with a decade structuring multi-billion-dollar deals in emerging markets." />
+  <link rel="icon" href="images/komorebi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A0F1E; --navy-mid: #111828; --teal: #00b090; --teal-dark: #008361;
+      --purple: #5025d1; --orange: #fea419; --dark: #141720; --gold: #C9A84C;
+      --grey: #f4f3f0; --mid-grey: #6B6E7B; --white: #ffffff; --max: 1140px;
+    }
+    html { font-size: 16px; }
+    body { background: var(--white); color: var(--dark); font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo span { color: var(--white); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; opacity: 0.85; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.75); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); font-weight: 600; }
+    .nav-links a.cta { background: var(--teal); color: var(--white); padding: 8px 18px; border-radius: 4px; font-weight: 500; }
+    .nav-links a.cta:hover { background: var(--teal-dark); }
+
+    .page-hero { background: var(--navy); padding: 80px 0; }
+    .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: end; }
+    .page-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--white); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; font-weight: 300; }
+    .hero-photo { border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .section { padding: 80px 0; }
+    .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .bg-grey { background: var(--grey); }
+    .bg-navy { background: var(--navy); }
+
+    /* ETYMOLOGY */
+    .etymology { background: var(--navy); padding: 72px 0; position: relative; overflow: hidden; }
+    .etymology::after { content: ''; position: absolute; inset: 0; background: url('images/circuit-tree.jpg') center/cover no-repeat; opacity: 0.06; }
+    .etymology-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .etymology-kanji { font-size: 6rem; color: var(--teal); opacity: 0.8; line-height: 1; font-weight: 300; }
+    .etymology-text .section-label { color: var(--teal); margin-bottom: 12px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; }
+    .etymology-text h2 {font-family: "Syne", sans-serif;  font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bottom: 20px; letter-spacing: -0.01em; }
+    .etymology-text p { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 16px; }
+    .etymology-text p:last-child { margin-bottom: 0; }
+
+    /* CAREER TIMELINE */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item { display: grid; grid-template-columns: 260px 1fr; gap: 48px; padding: 60px 0; border-top: 1px solid var(--grey); align-items: start; }
+    .timeline-item:last-child { border-bottom: 1px solid var(--grey); }
+    .timeline-meta { position: sticky; top: 80px; }
+    .timeline-period { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .timeline-org { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .timeline-role { font-size: 0.85rem; color: var(--mid-grey); }
+    .timeline-content h3 {font-family: "Syne", sans-serif;  font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .timeline-content p { font-size: 0.95rem; color: var(--mid-grey); line-height: 1.8; margin-bottom: 14px; }
+    .timeline-content p:last-child { margin-bottom: 0; }
+    .timeline-content strong { color: var(--dark); font-weight: 600; }
+    .timeline-img { margin-top: 24px; border-radius: 4px; overflow: hidden; aspect-ratio: 16/7; }
+    .timeline-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* PHILOSOPHY */
+    .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .phil-card { padding: 32px 28px; background: var(--white); border-top: 3px solid var(--teal); }
+    .phil-card:nth-child(2) { border-top-color: var(--purple); }
+    .phil-card:nth-child(3) { border-top-color: var(--orange); }
+    .phil-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .phil-card p { font-size: 0.88rem; color: var(--mid-grey); line-height: 1.7; }
+
+    .section-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title {font-family: "Syne", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .section-body { font-size: 0.97rem; color: var(--mid-grey); line-height: 1.8; max-width: 680px; }
+
+    footer { background: var(--navy); padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo img { height: 28px; opacity: 0.8; }
+    .footer-logo span { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.03em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.75rem; width: 100%; margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .nav-inner { padding: 0 24px; } .nav-links { gap: 20px; }
+      .page-hero { padding: 60px 0; } .page-hero-inner { padding: 0 24px; }
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .etymology { padding: 60px 0; } .etymology-inner { padding: 0 24px; }
+      .etymology-inner { grid-template-columns: 1fr; gap: 32px; }
+      .etymology-kanji { font-size: 4rem; }
+      .section { padding: 60px 0; } .section-inner { padding: 0 24px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 16px; }
+      .timeline-meta { position: static; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      footer { padding: 40px 0; } .footer-inner { padding: 0 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/komorebi-logo.png" alt="Komorebi" />
+      <span>Komorebi Holdings</span>
+    </a>
+    <div class="nav-links">
+      <a href="strategy.html" class="hide-mobile">Strategy</a>
+      <a href="advising.html" class="hide-mobile">Advising</a>
+      <a href="about.html" class="active">About</a>
+      <a href="https://leekelsall.com" target="_blank" rel="noopener" class="hide-mobile">Writing</a>
+      <a href="mailto:lee@komorebiholdings.com" class="cta">Contact</a>
+    </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-label">About</div>
+        <h1>Two decades at the intersection of capital, travel, and growth.</h1>
+        <p>Komorebi combines a decade building and scaling hospitality and travel businesses with a prior decade structuring multi-billion-dollar infrastructure deals across emerging markets.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="images/komorebi-tree.png" alt="Komorebi tree" />
+      </div>
+    </div>
+  </section>
+
+  <section class="etymology">
+    <div class="etymology-inner">
+      <div class="etymology-kanji">木漏れ日</div>
+      <div class="etymology-text">
+        <div class="section-label">The Name</div>
+        <h2>Komorebi — a feeling without a word.</h2>
+        <p>Komorebi (木漏れ日) is a Japanese word without a perfect English equivalent. It describes the sensation of sunlight filtering through the leaves of trees — a fleeting moment that can be felt but never fully captured in words or images.</p>
+        <p>It struck us as a perfect metaphor for the intangible benefits of travel, movement, and connection. The best travel experiences — and the best products, services, or investments — share this quality: they create a feeling that must be experienced to be understood.</p>
+        <p>We look for businesses with this effect — those that resonate beyond the transaction, compound in ways traditional metrics can't fully measure, and endure across cycles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Background</div>
+      <div class="section-title">The journey</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <div class="timeline-period">2006 — 2014</div>
+            <div class="timeline-org">Milbank & Norton Rose</div>
+            <div class="timeline-role">Project Finance Lawyer</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Project Finance — The Foundation</h3>
+            <p>I began my career as a project finance lawyer with <strong>Milbank</strong> and <strong>Norton Rose</strong>, advising on multi-billion-dollar infrastructure, mining, and energy projects in some of the world's most complex jurisdictions.</p>
+            <p>Highlights included the <strong>US$4.4 billion Oyu Tolgoi Copper and Gold Mine</strong> in Mongolia — one of the largest mining developments in the world — as well as multiple power projects across Africa, the Middle East, and Asia.</p>
+            <p>This period honed the ability to run high-stakes due diligence, navigate cross-border negotiations, and deliver results in emerging and frontier markets.</p>
+            <div class="timeline-img">
+              <img src="images/oyu-tolgoi.jpg" alt="Oyu Tolgoi copper and gold mine, Mongolia" />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <div class="timeline-period">2014 — 2022</div>
+            <div class="timeline-org">Ker & Downey Africa</div>
+            <div class="timeline-role">CEO & Group Leadership</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Ker & Downey Africa — Scaling Across a Continent</h3>
+            <p>After years in global finance, I stepped into high-end travel with <strong>Ker & Downey Africa</strong> — first as CEO of the newly launched online travel agency division, then in a leadership role across the group.</p>
+            <p>Over the next decade, we raised external capital, launched new ventures, and expanded into key markets, including <strong>Grand Africa Safaris</strong> in Tanzania. By the time I moved on, Ker & Downey Africa had become one of the continent's leading luxury safari operators, known for service excellence, creative product design, and operational scale.</p>
+            <div class="timeline-img">
+              <img src="images/entamanu.jpeg" alt="Luxury safari camp" />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <div class="timeline-period">2021 — 2023</div>
+            <div class="timeline-org">Fluent Living</div>
+            <div class="timeline-role">Co-Founder</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Fluent Living — Zero to Scale</h3>
+            <p>More recently, I co-founded <strong>Fluent Living</strong>, a serviced living platform in Cape Town, in partnership with the property development company <strong>Blok</strong>.</p>
+            <p>In under two years, we grew from zero to managing <strong>four apartment buildings and over 500+ keys</strong>, building new distribution channels across B2B and direct — while tackling the challenges of scaling fast: talent acquisition, systems architecture, and process discipline.</p>
+            <div class="timeline-img">
+              <img src="images/three43.jpg" alt="Three43 on B — Fluent Living, Cape Town" />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <div class="timeline-period">2023 — Present</div>
+            <div class="timeline-org">Komorebi Holdings</div>
+            <div class="timeline-role">Founder</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Komorebi — Research, Advisory, and Capital</h3>
+            <p>Today, through <strong>Komorebi Holdings</strong>, I publish independent investment research on small-cap, publicly listed travel and travel-adjacent companies worldwide — and advise founders, funds, and operators on strategy, growth, and capital allocation across the sector.</p>
+            <p>The practice draws on two decades of building and scaling businesses in travel, and a prior decade structuring complex transactions in emerging markets. Originally from the UK and now based in Cape Town, I work with a small number of clients and maintain a concentrated public equity portfolio aligned with the themes I research and write about.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-grey">
+    <div class="section-inner">
+      <div class="section-label">Philosophy</div>
+      <div class="section-title">How we think</div>
+      <div class="philosophy-grid">
+        <div class="phil-card">
+          <h3>Curious</h3>
+          <p>We follow threads wherever they lead — from eVTOL manufacturers in Germany to safari operators in Botswana. The best ideas often live at the edges of conventional sector maps.</p>
+        </div>
+        <div class="phil-card">
+          <h3>Patient</h3>
+          <p>We invest and advise with a long duration in mind. The Komorebi effect compounds slowly. We are not optimising for the next quarter.</p>
+        </div>
+        <div class="phil-card">
+          <h3>Convicted</h3>
+          <p>When we find a business that creates value beyond the transaction, we back it with conviction — whether that means a concentrated position or a long engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/komorebi-logo.png" alt="Komorebi" />
+        <span>Komorebi Holdings</span>
+      </div>
+      <div class="footer-links">
+        <a href="strategy.html">Strategy</a>
+        <a href="advising.html">Advising</a>
+        <a href="about.html">About</a>
+        <a href="https://leekelsall.com" target="_blank" rel="noopener">Writing</a>
+        <a href="mailto:lee@komorebiholdings.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Komorebi Investments Pty Ltd, trading as Komorebi Holdings &nbsp;·&nbsp; lee@komorebiholdings.com</div>
+    </div>
+  </footer>
+
+</body>
+</html>
