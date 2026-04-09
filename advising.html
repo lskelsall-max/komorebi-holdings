@@ -28,16 +28,8 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <style>
-    /* Syne descender override */
-    @font-face {
-      font-family: 'Syne';
-      src: local('Syne');
-      ascent-override: 95%;
-      descent-override: 30%;
-      line-gap-override: 5%;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy: #0A0F1E; --navy-mid: #111828; --teal: #00b090; --teal-dark: #008361;
@@ -68,13 +60,13 @@
     .page-hero::after { content: ''; position: absolute; inset: 0; background: url('images/network-tree.jpg') center/cover no-repeat; opacity: 0.1; }
     .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
     .page-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .page-hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--white); line-height: 1.8; letter-spacing: -0.03em; max-width: 640px; margin-bottom: 20px; }
+    .page-hero h1 {font-family: "Space Grotesk", sans-serif;  font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--white); line-height: 1.8; letter-spacing: -0.03em; max-width: 640px; margin-bottom: 20px; }
     .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 540px; line-height: 1.7; font-weight: 300; }
 
     .section { padding: 80px 0; }
     .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .section-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .section-title {font-family: "Syne", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.8; }
+    .section-title {font-family: "Space Grotesk", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.8; }
     .section-body { font-size: 0.97rem; color: var(--mid-grey); line-height: 1.8; max-width: 680px; margin-bottom: 48px; }
     .bg-grey { background: var(--grey); }
 
@@ -86,7 +78,7 @@
     .track:nth-child(2) .track-header { background: var(--purple); }
     .track:nth-child(3) .track-header { background: var(--teal-dark); }
     .track-header .track-who { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
-    .track-header h3 {font-family: "Syne", sans-serif;  font-size: 1.15rem; font-weight: 700; color: var(--white); line-height: 1.8; }
+    .track-header h3 {font-family: "Space Grotesk", sans-serif;  font-size: 1.15rem; font-weight: 700; color: var(--white); line-height: 1.8; }
     .track-body { background: var(--grey); padding: 24px 28px; }
     .track-body ul { list-style: none; }
     .track-body ul li { font-size: 0.88rem; color: var(--dark); padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06); padding-left: 16px; position: relative; }
@@ -102,7 +94,7 @@
 
     /* HOW WE WORK */
     .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .how-text h2 {font-family: "Syne", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.8; }
+    .how-text h2 {font-family: "Space Grotesk", sans-serif;  font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.8; }
     .how-text p { font-size: 0.95rem; color: var(--mid-grey); line-height: 1.8; margin-bottom: 16px; }
     .how-steps { display: flex; flex-direction: column; gap: 20px; }
     .how-step { display: flex; gap: 20px; align-items: flex-start; }
@@ -112,7 +104,7 @@
 
     /* CTA */
     .cta-section { background: var(--navy); padding: 80px 0; text-align: center; }
-    .cta-section h2 {font-family: "Syne", sans-serif;  font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.8; }
+    .cta-section h2 {font-family: "Space Grotesk", sans-serif;  font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.8; }
     .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.65); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
     .btn { display: inline-block; padding: 14px 32px; border-radius: 4px; font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; transition: all 0.2s; }
     .btn-teal { background: var(--teal); color: var(--white); }
