@@ -30,6 +30,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <style>
+    /* Syne descender override */
+    @font-face {
+      font-family: 'Syne';
+      src: local('Syne');
+      ascent-override: 95%;
+      descent-override: 30%;
+      line-gap-override: 5%;
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy: #0A0F1E;
