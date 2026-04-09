@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://komorebiholdings.com/sitemap.xml
