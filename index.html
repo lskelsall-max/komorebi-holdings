@@ -66,7 +66,7 @@
     .hero::after { content: ''; position: absolute; inset: 0; background: url('images/komorebi-inspiration.webp') center/cover no-repeat; opacity: 0.15; }
     .hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
     .hero-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-    .hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 720px; margin-bottom: 24px; }
+    .hero h1 {font-family: "Syne", sans-serif;  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.35; letter-spacing: -0.03em; max-width: 720px; margin-bottom: 24px; }
     .hero h1 span { color: var(--teal); }
     .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 560px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -92,7 +92,7 @@
     .pillars { background: var(--grey); padding: 80px 0; }
     .pillars-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .section-label { font-family: "DM Sans", sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .section-title {font-family: "Syne", sans-serif;  font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 48px; letter-spacing: -0.01em; }
+    .section-title {font-family: "Syne", sans-serif;  font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 48px; letter-spacing: -0.01em; line-height: 1.4; }
     .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .pillar { background: var(--white); padding: 32px 24px; border-radius: 4px; border-top: 3px solid transparent; transition: border-color 0.2s; }
     .pillar:nth-child(1) { border-top-color: var(--teal); }
@@ -100,7 +100,7 @@
     .pillar:nth-child(3) { border-top-color: var(--orange); }
     .pillar:nth-child(4) { border-top-color: var(--navy); }
     .pillar-icon { font-size: 1.6rem; margin-bottom: 16px; }
-    .pillar h3 {font-family: "Syne", sans-serif;  font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .pillar h3 {font-family: "Syne", sans-serif;  font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
     .pillar p { font-size: 0.85rem; color: var(--mid-grey); line-height: 1.65; }
 
     /* SERVICES */
@@ -111,7 +111,7 @@
     .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .service-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 40px 36px; transition: background 0.2s; }
     .service-card:hover { background: rgba(255,255,255,0.1); }
-    .service-card h3 {font-family: "Syne", sans-serif;  font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .service-card h3 {font-family: "Syne", sans-serif;  font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.4; }
     .service-card .service-sub { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
     .service-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 24px; }
     .service-card a { font-size: 0.82rem; font-weight: 600; color: var(--teal); letter-spacing: 0.03em; }
@@ -131,7 +131,7 @@
     /* CONTACT STRIP */
     .contact-strip { background: var(--teal); padding: 60px 0; text-align: center; }
     .contact-strip { max-width: var(--max); margin-left: auto; margin-right: auto; padding-left: 40px; padding-right: 40px; }
-    .contact-strip h2 {font-family: "Syne", sans-serif;  font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .contact-strip h2 {font-family: "Syne", sans-serif;  font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.4; }
     .contact-strip p { font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
     .btn-white { background: var(--white); color: var(--teal); font-weight: 700; }
     .btn-white:hover { background: var(--grey); }
@@ -181,7 +181,7 @@
     }
     @media (max-width: 600px) {
 
-      .hero h1 {font-family: "Syne", sans-serif;  font-size: 1.9rem; }
+      .hero h1 {font-family: "Syne", sans-serif;  font-size: 1.9rem; line-height: 1.4; }
       .pillars-grid { grid-template-columns: 1fr; }
       .intro-stats { grid-template-columns: 1fr 1fr; }
     }
